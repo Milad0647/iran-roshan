@@ -160,3 +160,7 @@ export function getRank(highestTile: number): string {
 export function formatPersianNumber(num: number): string {
   return num.toLocaleString("fa-IR");
 }
+
+export function formatTileNumber(num: number): string {
+  return num.toLocaleString("fa-IR", { useGrouping: false });
+}
