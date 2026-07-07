@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-vazir: var(--font-vazirmatn);
+  --color-campaign-yellow: #f5c518;
+  --color-campaign-blue: #1e88e5;
+  --color-campaign-dark: #1a1a2e;
+  --color-campaign-light: #f8f9fc;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: var(--font-vazirmatn), system-ui, sans-serif;
+  background: linear-gradient(160deg, #f8f9fc 0%, #e8f0fe 50%, #fff9e6 100%);
+  min-height: 100dvh;
+  color: #1a1a2e;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tile-glow {
+    box-shadow:
+      0 0 20px rgba(245, 197, 24, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .tile-glow-gold {
+    box-shadow:
+      0 0 30px rgba(245, 197, 24, 0.6),
+      0 0 60px rgba(30, 136, 229, 0.3),
+      0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .touch-none {
+    touch-action: none;
+  }
+}
