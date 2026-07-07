@@ -26,6 +26,13 @@ body {
   overscroll-behavior: none;
 }
 
+html.lock-page-scroll,
+body.lock-page-scroll {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

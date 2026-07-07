@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { StartScreen } from "@/components/StartScreen";
 import { HowToPlayModal } from "@/components/HowToPlayModal";
@@ -33,6 +33,22 @@ export default function HomePage() {
   const isPlaying = screen === "game";
 
   useKeyboard(handleMove, isPlaying);
+
+  useEffect(() => {
+    const className = "lock-page-scroll";
+    if (isPlaying) {
+      document.body.classList.add(className);
+      document.documentElement.classList.add(className);
+    } else {
+      document.body.classList.remove(className);
+      document.documentElement.classList.remove(className);
+    }
+
+    return () => {
+      document.body.classList.remove(className);
+      document.documentElement.classList.remove(className);
+    };
+  }, [isPlaying]);
 
   return (
     <>
